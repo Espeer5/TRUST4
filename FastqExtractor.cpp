@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <pthread.h>
 
+#include "FastqExtractor.hpp"
 #include "SeqSet.hpp"
 #include "ReadFiles.hpp"
 #include "BarcodeCorrector.hpp"
@@ -260,7 +261,7 @@ void *ProcessReads_Thread( void *pArg )
 	pthread_exit( NULL ) ;
 }
 
-int main( int argc, char *argv[] )
+int fastq_extractor_main( int argc, char *argv[] )
 {
 	int i ;
 	if ( argc <= 1 )

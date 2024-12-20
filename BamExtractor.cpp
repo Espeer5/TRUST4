@@ -10,6 +10,7 @@
 #include <map>
 #include <string>
 
+#include "BamExtractor.hpp"
 #include "alignments.hpp"
 #include "SeqSet.hpp"
 
@@ -461,7 +462,7 @@ void FinishWork( std::vector<struct _unmappedCandidate> work,
 }
 
 
-int main( int argc, char *argv[] )
+int bam_extractor_main( int argc, char *argv[] )
 {
 	if ( argc <= 1 )
 	{

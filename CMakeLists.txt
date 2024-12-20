@@ -38,21 +38,20 @@ if(ASAN)
                                 -ldl -g")
 endif()
 
-# Use Trust4 as a library
+# Compile TRUST4 programs as linkable libraries
 add_library(trust4_lib STATIC trust4_main.cpp)
 target_link_libraries(trust4_lib ${LINK_LIBS})
 target_compile_options(trust4_lib PRIVATE -w)
 
-# Other executables
-add_executable(bam-extractor BamExtractor.cpp)
+add_library(bam-extractor STATIC BamExtractor.cpp)
 target_link_libraries(bam-extractor ${LINK_LIBS} bam)
 target_compile_options(bam-extractor PRIVATE -w)
 
-add_executable(fastq-extractor FastqExtractor.cpp)
+add_library(fastq-extractor STATIC FastqExtractor.cpp)
 target_link_libraries(fastq-extractor ${LINK_LIBS})
 target_compile_options(fastq-extractor PRIVATE -w)
 
-add_executable(annotator Annotator.cpp)
+add_library(annotator STATIC Annotator.cpp)
 target_link_libraries(annotator ${LINK_LIBS})
 target_compile_options(annotator PRIVATE -w)
 

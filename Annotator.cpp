@@ -7,6 +7,7 @@
 #include <vector>
 #include <pthread.h>
 
+#include "Annotator.hpp"
 #include "KmerCount.hpp"
 #include "SeqSet.hpp"
 #include "AlignAlgo.hpp"
@@ -420,7 +421,7 @@ void *AssignReads_Thread( void *pArg )
 }
 
 
-int main( int argc, char *argv[] )
+int annotater_main( int argc, char *argv[] )
 {
 	int i, j, k ;
 	int radius = 10 ;
