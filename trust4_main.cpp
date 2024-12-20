@@ -8,6 +8,7 @@
 
 #include <vector>
 
+#include "trust4_main.hpp"
 #include "KmerCount.hpp"
 #include "SeqSet.hpp"
 #include "AlignAlgo.hpp"
@@ -623,7 +624,7 @@ void *AssignReads_Thread( void *pArg )
 	pthread_exit( NULL ) ;
 }
 
-int main( int argc, char *argv[] )
+int trust4_main( int argc, char *argv[] )
 {
 	int i, j, k ;
 

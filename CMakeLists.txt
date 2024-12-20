@@ -38,11 +38,12 @@ if(ASAN)
                                 -ldl -g")
 endif()
 
-# Executables - silence all compilation warning for each
-add_executable(trust4 main.cpp)
-target_link_libraries(trust4 ${LINK_LIBS})
-target_compile_options(trust4 PRIVATE -w)
+# Use Trust4 as a library
+add_library(trust4_lib STATIC trust4_main.cpp)
+target_link_libraries(trust4_lib ${LINK_LIBS})
+target_compile_options(trust4_lib PRIVATE -w)
 
+# Other executables
 add_executable(bam-extractor BamExtractor.cpp)
 target_link_libraries(bam-extractor ${LINK_LIBS} bam)
 target_compile_options(bam-extractor PRIVATE -w)
